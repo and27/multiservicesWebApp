@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="CSS/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Multiservices</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBxGF4EGHE-6tmzA60DZktJLslX8n2ThFc",
+    authDomain: "fabulus-a7471.firebaseapp.com",
+    databaseURL: "https://fabulus-a7471.firebaseio.com",
+    projectId: "fabulus-a7471",
+    storageBucket: "fabulus-a7471.appspot.com",
+    messagingSenderId: "608667945769"
+  };
+
+  firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="#">MS</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Servicios</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Acerca de</a>
+       </li>
+
+     </ul>
+     <form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     </form>
+   </div>
+  </nav>
+
+  <div class="container text-center pt-5" >
+    <!-- Content here -->
+    <div class="row mt-5 text-center">
+      <div class="col-md-4 offset-md-4" id="contenedor">
+          <div></div>
+          <h4>Recupera tu contraseña</h4>
+          <form "form-group">
+          <input class="form-control" id="correo" type="email" placeholder="Email">
+          <button class="btn btn-primary" onclick="forget()">Enviar solictud</button>
+          <button class="btn btn-primary" onclick="cerrar()" >Regresar</button>
+          <form>
+          </div>
+      </div>
+    </div>
+
+  
+    <script src="app.js"></script>
+</body>
+</html>
