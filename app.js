@@ -1,4 +1,4 @@
-﻿document.cookie = "";
+﻿
 function userno(){
   var contenido=document.getElementById('usuario')
  contenido.innerHTML=`
@@ -27,33 +27,70 @@ function regresarindex(){
   window.location.replace("index.html");
 
 }
-
+function publication(){
+  window.location.replace("publicaciones.html")
+}
 function publicaciones(){
-  var cat=new Array();
-  
+  var botones="";
+  var Descripcion=new Array();
+  var Titulo=new Array();
+  var img=new Array();
+  var key=new Array();
   var contenido=document.getElementById('botones')
   //window.location.replace("publicaciones.html");
-  var database = firebase.database().ref("Categoria/");
-  //var categoria = database.child("Categoria");
+  var database = firebase.database().ref("Publications/Cat1");
   database.once("value", function(snapshot) {
       snapshot.forEach(function(child) {
-      cat.push(child.key);
+      //TAKE ALL THE RESULTS ACCORDING TO THE CATEGORIE
+      Descripcion.push(JSON.stringify(child.child("description")).split('"').join('')); 
+      Titulo.push(JSON.stringify(child.child("title")).split('"').join(''));
+      img.push(JSON.stringify(child.child("pic1")));
+      key.push(child.key);
     });
-    var botones="";
-    for (var i=0;i<cat.length;i++){
-      botones=botones+"<button>"+ cat[i]+"</button>";
+    var contenido=document.getElementById('publicaciones');
+    // crea un arreglo con secciones que se vera en el documento html
+    for (var i=0;i<Titulo.length;i++){
+      botones=botones+"<div class='container text-center pt-5' onclick=verpublicacion('"+key[i]+"')> <div class='row mt-5 text-center'>"+ Titulo[i]+"</div> <div class='row mt-5 text-center'>"+ Descripcion[i]+"</div><img src="+img[i]+"height='70px' width='70px'/> </div> ";
     }
     contenido.innerHTML=botones;
   });
-
-  //alert(categoria.value);
-//  createboardpublication(categoria);
-  
 }
+  function verpublicacion(key){
+    setCookie("IdPublication", key);
+    var contenido=document.getElementById('publicaciones');
+   
+    var text="";
+    var database = firebase.database().ref("Publications/Cat1").child(key);
+    database.once("value", function(snapshot) {
+      snapshot.forEach(function(child) {
+        var useruid;
+        if (child.key=="pic1" || child.key=="pic2"){
+        text=text+"<img src="+JSON.stringify(child).split('"').join('')+"/>";
+        }
+        else if(child.key=="userID"){
+          useruid=JSON.stringify(child);
+        }
+        else if(child.key=="username"){
+          text=text+"<div onclick=f("+ useruid+")>"+JSON.stringify(child).split('"').join('')+"</div>";
+        }
+        else{
+          text=text+child.key+":"+JSON.stringify(child).split('"').join('')+"\n";
+        }
+       });
+    contenido.innerHTML="<h1>"+ text+"</h1>";
+  });
+}
+function setCookie(cname, cvalue) {
+  
+  document.cookie = cname + "=" + cvalue + ";" ;
+}
+
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
+
   var ca = decodedCookie.split(';');
+  alert(ca);
   for(var i = 0; i <ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
@@ -67,9 +104,10 @@ function getCookie(cname) {
 }
  function createboardpublication(){ 
   var cat="Limpieza";
+  var text=new Array();
   document.cookie="categoria="+cat;
   //var categoria=getCookie("Categoria");
-  alert(cat);
+  
   var contenido=document.getElementById('publicaciones')
   contenido.innerHTML="<p>Bienvenido </p>" ;
   var database = firebase.database();
@@ -77,8 +115,7 @@ function getCookie(cname) {
   publicacion=database.ref('/Publicacion/Categoria/'+cat+'/');
   database.once("value", function(snapshot) {
     snapshot.forEach(function(child) {
-  if (child.key=="Titulo"){cat.push(child.value);
-  alert(child.value);}
+    text.push(child.key);
   });
   var botones="";
     });
