@@ -177,7 +177,7 @@ function verificar(){
   var user=firebase.auth().currentUser;
   user.sendEmailVerification().catch(function(error){console.log(error);})
 }
-
+/*
 function registrar(){
 var contenido=document.getElementById('registro')
   
@@ -189,14 +189,14 @@ var contenido=document.getElementById('registro')
   <button onclick="facebook()">Autenticar con Facebook</button>
   <script src="app.js"></script>
   `;
-}
+}*/
 function register(){
  
   var email= document.getElementById('email').value;
   var password=document.getElementById('contra').value;
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function()
     { alert("Se ha enviado un correo de autentificacion a "+email+" por favor ingresa a tu correo para validar la cuenta")
-      verificar();
+    window.location.replace("index.html");
 
     }).catch(function(error) {
       
@@ -204,7 +204,8 @@ function register(){
     var errorCode = error.code;
     var errorMessage = error.message;
     alert(errorMessage);
-    alert(errorCode);
+ 
     // ...
   });
+  
 }
