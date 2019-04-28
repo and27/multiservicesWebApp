@@ -27,18 +27,15 @@ function regresarindex(){
   window.location.replace("index.html");
 
 }
-function publication(){
-  window.location.replace("publicaciones.html")
-}
-function publicaciones(){
-  var botones="";
+function publication(cat){
+  
+  var botones=" ";
   var Descripcion=new Array();
   var Titulo=new Array();
   var img=new Array();
   var key=new Array();
   var contenido=document.getElementById('botones')
-  //window.location.replace("publicaciones.html");
-  var database = firebase.database().ref("Publications/Cat1");
+  var database = firebase.database().ref("Publications/"+cat);
   database.once("value", function(snapshot) {
       snapshot.forEach(function(child) {
       //TAKE ALL THE RESULTS ACCORDING TO THE CATEGORIE
@@ -47,37 +44,51 @@ function publicaciones(){
       img.push(JSON.stringify(child.child("pic1")));
       key.push(child.key);
     });
-    var contenido=document.getElementById('publicaciones');
+    var contenido=document.getElementById('new');
     // crea un arreglo con secciones que se vera en el documento html
     for (var i=0;i<Titulo.length;i++){
-      botones=botones+"<div class='container text-center pt-5' onclick=verpublicacion('"+key[i]+"')> <div class='row mt-5 text-center'>"+ Titulo[i]+"</div> <div class='row mt-5 text-center'>"+ Descripcion[i]+"</div><img src="+img[i]+"height='70px' width='70px'/> </div> ";
+      botones=botones+"<div class='container text-center' style='background-color:white;  onclick=verpublicacion('"+key[i]+"')> <h1>"+ Titulo[i]+"</h1> <h2>"+ Descripcion[i]+"</h2><img src="+img[i]+"height='70px' width='70px'/> </div> ";
     }
     contenido.innerHTML=botones;
   });
 }
   function verpublicacion(key){
-    setCookie("IdPublication", key);
-    var contenido=document.getElementById('publicaciones');
    
-    var text="";
+    var contenido=document.getElementById('new');
+    var useruid;
+    var text=" ";
+    var imagenes=" ";
+    var nombre=" ";
+    var title=" ";
+    var desc=" ";
     var database = firebase.database().ref("Publications/Cat1").child(key);
     database.once("value", function(snapshot) {
       snapshot.forEach(function(child) {
-        var useruid;
+        
         if (child.key=="pic1" || child.key=="pic2"){
-        text=text+"<img src="+JSON.stringify(child).split('"').join('')+"/>";
+          imagenes=imagenes+"<img  src="+JSON.stringify(child).split('"').join('')+"/>";
         }
         else if(child.key=="userID"){
           useruid=JSON.stringify(child);
+          text="<div class='container text-center pt-5'  onclick=f("+ useruid+")><div  style='background-color:white;' >  ";
         }
         else if(child.key=="username"){
-          text=text+"<div onclick=f("+ useruid+")>"+JSON.stringify(child).split('"').join('')+"</div>";
+         nombre= nombre+"<h4> Publicado por "+JSON.stringify(child).split('"').join('')+"</h4>";
         }
-        else{
-          text=text+child.key+":"+JSON.stringify(child).split('"').join('')+"\n";
+        else if(child.key=="title"){
+          title=title+"<h1>"+JSON.stringify(child).split('"').join('')+"</h1> ";
+        }
+        else if(child.key=="categoria"){
+          categoria=categoria+"<h3>"+JSON.stringify(child).split('"').join('')+"</h3> ";
+        }
+        else if(child.key=="description"){
+          desc=desc+"<h3>"+JSON.stringify(child).split('"').join('')+"</h3> ";
         }
        });
-    contenido.innerHTML="<h1>"+ text+"</h1>";
+      text=text+title+desc+imagenes+nombre;
+
+       alert(text);
+    contenido.innerHTML= text+"</div></div></div>";
   });
 }
 function setCookie(cname, cvalue) {
