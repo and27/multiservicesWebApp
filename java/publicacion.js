@@ -1,6 +1,5 @@
 function publication(cat){
-  
-    var botones='<div class="row mt-5 text-center">';
+    var botones="<div id='contenedor'><div class='row pt-5'>";
     var Descripcion=new Array();
     var Titulo=new Array();
     var img=new Array();
@@ -18,9 +17,14 @@ function publication(cat){
       var contenido=document.getElementById('new');
       // crea un arreglo con secciones que se vera en el documento html
       for (var i=0;i<Titulo.length;i++){
-        botones=botones+"<div class='col-md-4 p-5'; style='background-color:white;  onclick=verpublicacion('"+key[i]+"')><img src="+img[i]+"height='70px' width='70px'> <h2>"+ Titulo[i]+"</h2> <p class='text-left'>"+ Descripcion[i]+"</p>  ";
-        botones=botones+"<button onclick='verpublicacion("+'"'+cat+'"'+","+'"'+key[i]+'"'+")'; class='btn btn-primary'>ver más</button></div>"
-  
+        botones=botones+
+        "<div class='col-md-2 offset-md-1'; onclick='verpublicacion("+'"'+cat+'"'+","+'"'+key[i]+'"'+")';>"+
+        "<img src="+img[i]+"> </div>"+
+        "<div class='col-md-6'>"+
+        "<h4>"+Titulo[i]+"</h4>"+
+        "<p >"+ Descripcion[i]+"</p> </div> "+
+       "<button onclick='verpublicacion("+'"'+cat+'"'+","+'"'+key[i]+'"'+")'; class='btn btn-primary'>ver más</button></div>";
+        
       }
       contenido.innerHTML=botones+"</div>";
     });
