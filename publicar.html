@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Fabulus</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBxGF4EGHE-6tmzA60DZktJLslX8n2ThFc",
+        authDomain: "fabulus-a7471.firebaseapp.com",
+        databaseURL: "https://fabulus-a7471.firebaseio.com",
+        projectId: "fabulus-a7471",
+        storageBucket: "fabulus-a7471.appspot.com",
+        messagingSenderId: "608667945769"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+  <body>
+      <h1>Crear una Publicacion</h1>
+
+     
+      <div id="registro"></div>
+
+      <p>
+        <select name="OS" id="categoria" type="value">
+          <option value="0">Categoría</option>
+          <option value="Hogar">Servicio del hogar</option>
+          <option value="Limpieza">Limpieza</option>
+          <option value="Reparación">Reparacion de equipos electricos</option>
+          <option value="Turismo">Turismo</option>
+          <option value="enseñanza">Tutorias, clases</option>
+        </select>
+      </p>
+
+      <p>
+        <input id="titulo" type="value" placeholder="Título" />
+      </p>
+
+      <p>
+        <input id="Descripcion" type="value" placeholder="Descripción" />
+      </p>
+      <p>
+        <input id="Valor" type="value" placeholder="Valor Propuesto" />
+      </p>
+      
+      <p>
+        <input id="Imagen1" type="file" value="upload" />
+      </p>
+
+      <p>
+        <button onclick="writePublication()">
+          Publicar
+        </button>
+      
+      </p>
+
+     
+      <script src="java/crearpublicacion.js"></script> 
+ 
+    
+  </body>
+</html>

@@ -32,10 +32,13 @@
     <output id="list"></output>
     
   <script>
+
       function handleFileSelect(evt) { //Siempre que alguien suba una foto
-        var files = evt.target.files; // FileList object
-        var storageRef = firebase.storage().ref('/carpeta');// puedes añadir una referencia por id de publicacion asi cada publicacion tendria una carpeta
+        var files = evt.target.files;
+        alert(files[0]) // FileList object
+        var storageRef = firebase.storage().ref();// puedes añadir una referencia por id de publicacion asi cada publicacion tendria una carpeta
         var fileRef=storageRef.child(files[0].name); //Nombre como se guarda la foto en FIREBASE
+        alert(fileRef);
         var x=fileRef.put(files[0]).then(function(snapshot) {
  alert(snapshot.databaseURL)
  });

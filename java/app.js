@@ -117,7 +117,7 @@ function cerrar(){
     console.log("bye");
     window.location.replace("index.html");
   }).catch(function(error){
-    alter(error);
+    alert(error);
   }) 
 }
 function verificar(){
