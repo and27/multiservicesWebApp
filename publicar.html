@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
+<link rel = "shorcut icon" type="image/x-icon" href="img/logo2.png">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Fabulus</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Multiservices</title>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <script>
+
+
+<script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyBxGF4EGHE-6tmzA60DZktJLslX8n2ThFc",
@@ -16,13 +25,44 @@
         messagingSenderId: "608667945769"
       };
       firebase.initializeApp(config);
-    </script>
+</script>
   </head>
-  <body>
-      <h1>Crear una Publicacion</h1>
+  <body class="totalback">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img class="logoCircle" src="img/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
 
-     
-      <div id="registro"></div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="servicios.html">Servicios</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Acerca de</a>
+        </li>
+           
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    </nav>
+
+
+
+    <div class="container text-center pt-5"> 
+            <h1 id="title"> <img class="logoHorizontal" src="img/logo2.png"> </h1>
+    </div>        
+   
+      <div id="registro" ></div>
+      <div class="signup">
+      
 
       <p>
         <select name="OS" id="categoria" type="value">
@@ -40,15 +80,18 @@
       </p>
 
       <p>
-        <input id="Descripcion" type="value" placeholder="Descripción" />
+        <input id="Descripcion" type="value" rows="3" cols="30" placeholder="Descripción" />
       </p>
+
       <p>
-        <input id="Valor" type="value" placeholder="Valor Propuesto" />
+        <input id="Valor" type="number" placeholder="Valor Propuesto (Ejem:$20)" />
       </p>
-      
+
       <p>
         <input id="Imagen1" type="file" value="upload" />
       </p>
+
+    
 
       <p>
         <button onclick="writePublication()">
@@ -57,8 +100,21 @@
       
       </p>
 
+      </div>
+
+      <div class="whysign">
+          <h1>¡Crea tu publicación!</h1>
+          <p>Añade tu publicación y aumenta la demanda laboral</p>
+      </div>
+
+
+
+
+
+
      
       <script src="java/crearpublicacion.js"></script> 
+      
  
     
   </body>
