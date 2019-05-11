@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="CSS/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Multiservices</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBxGF4EGHE-6tmzA60DZktJLslX8n2ThFc",
+    authDomain: "fabulus-a7471.firebaseapp.com",
+    databaseURL: "https://fabulus-a7471.firebaseio.com",
+    projectId: "fabulus-a7471",
+    storageBucket: "fabulus-a7471.appspot.com",
+    messagingSenderId: "608667945769"
+  };
+
+  firebase.initializeApp(config);
+</script>
+    <style media="screen">
+      body { color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+
+  </head>
+  <body class="totalback">
+        <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="#"><img class="logoCircle" src="img/logo.png"></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="servicios.html">Servicios</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Acerca de</a>
+       </li>
+     </ul>
+     <form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     </form>
+   </div>
+  </nav>
+  <!-- Fin Barra de navegación -->
+  <div class="container text-center pt-5" >
+    <!-- Content here -->
+	<img class="logoHorizontal" src="img/logo2.png">
+      <h1 id="title" >Bienvenido </h1>
+	  
+      <section id="usuario"></section>
+  </div>
+
+
+
+<div class="row mt-5 text-center">
+  <div class="col-md-4 offset-md-4 p-5" id="contenedor">
+      <div id="registro"></div>
+      <h4>Registro</h4>
+      <input class="form-control" id="email" type="email" placeholder="Email">
+      <input class="form-control" id="contra" type="password" placeholder="Contraseña">
+      <button class="btn btn-primary btn-block" onclick="register();">Registrate</button>
+
+      <div id="seccion"></div>
+      
+     
+  </div>
+</div>
+
+          <script src="java/app.js"></script>
+    </body>
+  </html>
