@@ -1,0 +1,122 @@
+body{
+
+}
+.totalback {
+  background: url(../img/background.png) no-repeat center center;
+  background-size:cover;
+  height: 700px;
+}
+.back {
+  background: url(../img/background.png) no-repeat center center;
+  background-size:cover;
+  height: 200px;
+}
+
+#title{
+  text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+  font-size:90px;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  
+  
+}
+#title2{
+  text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+  font-size:50px;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+#contenedor{
+  background-color: #f8f9faa1;
+  border-radius:15px;
+  padding:2%;
+
+}
+
+#registro {
+  width: 840px;
+  margin: 25px auto;
+}
+
+.signup {
+  float: left;
+  width: 350px;
+  padding: 30px 20px;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px 0 0 5px;
+}
+
+.whysign {
+  float: left;
+  background-color: white;
+  width: 450px;
+  height: 500px;
+  border-radius: 0 5px 5px 0;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+h1 {
+  color: rgba(0,0,0,.7);
+  font-weight: 900;
+  font-size: 2.5em;
+}
+
+[type=value] {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  height: 45px;
+  line-height: 45px;  
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
+}
+
+
+p {
+  color: rgba(0,0,0,.6);
+  font-size: 1.2em;
+  margin: 50px 0 50px 0;
+}
+
+.publi {
+  float: center;
+  background-color: white;
+  width: 450px;
+  height: 395px;
+  border-radius: 0 5px 5px 0;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+img{
+  max-width:100%;
+}
+
+.service-image{
+  max-width:30%;
+  padding-bottom:10px;
+}
+
+.logoCircle{
+	max-width:10%;
+}
+.logoHorizontal{
+	max-width:25%;
+	max-height:100px;
+}
+.message-image{
+	max-width:30%;
+	max-height:50px;
+}
+.message{
+	background-color:#1bcc69;
+	border-radius:20px;
+}

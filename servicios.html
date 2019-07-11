@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <link rel = "shorcut icon" type="image/x-icon" href="img/logo2.png">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,47 +68,71 @@
 
   <div class="container text-center pt-5" >
     <!-- Content here -->
-      <h1 id="title"> <img class="logoHorizontal" src="img/logo2.png" </h1>
+      <h1 id="title"> <img class="logoHorizontal" src="img/logo2.png"> </h1>
       <section id="usuario"></section>
   </div>
-
+<div  id="new" >
 <div class="row mt-5 text-center">
+  <!----------------------------------------------------------------------------->
   <div class="col-md-4 p-5" style="background-color:white;">
     <img class="service-image" src="img/s1.png">
-    <h4>Nombre del servicio</h4><hr>
-    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
-  </div>
-  <div class="col-md-4 p-5" style="background-color:white;">
-      <img class="service-image" src="img/s2.png">
-    <h4>Nombre del servicio</h4><hr>
-    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
-  </div>
-  <div class="col-md-4 p-5" style="background-color:white;">
-      <img class="service-image" src="img/s3.png">
-    <h4>Nombre del servicio</h4><hr>
-    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
-  </div>
+    <h4>Limpieza</h4><hr>
+    <p class="text-left">
+      Busca ofertas de trabajo para servicios como limpieza de hogares, oficinas, etc
+      <center> <button onclick="publication('Limpieza');" class="btn btn-outline-danger my-2 my-sm-0">Buscar</button></p> </center>
   </div>
 
+  <!----------------------------------------------------------------------------->
+  <div class="col-md-4 p-5" style="background-color:white;">
+      <img class="service-image" src="img/s2.png">
+    <h4>Enseñanza</h4><hr>
+    <p class="text-left"> 
+      Ofertas de trabajo en transmición de conocimiento, tutoría, clases personalizadas.
+      <center><button onclick="publication('enseñanza');" class="btn btn-outline-danger my-2 my-sm-0"> Buscar </button></p> </center>
+  </div>
+
+  <!----------------------------------------------------------------------------->
+  <div class="col-md-4 p-5" style="background-color:white;">
+      <img class="service-image" src="img/s3.png">
+    <h4>Turismo</h4><hr>
+    <p class="text-left">
+      Busca ofertas de trabajo para realizar actividades relacionadas al turismo.
+      <center><button onclick="publication('Turismo');" class="btn btn-outline-danger my-2 my-sm-0"> Buscar </button></p> </center>
+  </div>
+  </div>
+  <!----------------------------------------------------------------------------->
   <div class="row mt-5 text-center">
     <div class="col-md-4 p-5" style="background-color:white;">
       <img class="service-image" src="img/s2.png">
-      <h4>Nombre del servicio</h4><hr>
-      <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
+      <h4>Reparación - Instalación</h4><hr>
+      <p class="text-left">
+        Ofertas de trabajo que implican reparación varia e instalación de distintos servicios.
+        <center><button onclick="publication('Reparación');" class="btn btn-outline-danger my-2 my-sm-0"> Buscar </button></p> </center>
     </div>
+  <!----------------------------------------------------------------------------->
+
     <div class="col-md-4 p-5" style="background-color:white;">
         <img class="service-image" src="img/s4.png">
-      <h4>Nombre del servicio</h4><hr>
-      <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
+      <h4>Servicios al hogar</h4><hr>
+      <p class="text-left">
+        Ofertas de trabajo relacionadas con actividades del hogar.
+        <center><button onclick="publication('Hogar');" class="btn btn-outline-danger my-2 my-sm-0"> Buscar </button></p></center>
     </div>
+  <!----------------------------------------------------------------------------->
+
     <div class="col-md-4 p-5" style="background-color:white;">
         <img class="service-image" src="img/s5.png">
-      <h4>Nombre del servicio</h4><hr>
-      <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu interdum felis. Integer rhoncus ...<button class="btn btn-primary">ver más</button></p>
+      <h4>Servicios Varios</h4><hr>
+      <p class="text-left">
+        Buscar variedad de ofertas de trabajos varios y accesibles.
+        <center><button onclick="publication('Varios');" class="btn btn-outline-danger my-2 my-sm-0"> Buscar </button></p> </center>
+    </div>
     </div>
     </div>
 </div>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div
-  <script src="app.js"></script>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  <script src="java/publicacion.js"></script>
+  <script src="java/app.js"></script>
+
     </body>
   </html>

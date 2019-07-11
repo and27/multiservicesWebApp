@@ -48,8 +48,8 @@
 
      </ul>
      <form class="form-inline my-2 my-lg-0">
-       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+         <!----  <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button> --->
        <button class="btn btn-primary" onclick='cerrar()'>Cerrar Cuenta</button>
      </form>
    </div>
@@ -73,12 +73,16 @@
       <hr>
       <div class=" row pt-3">
         <div class="col-md-6 offset-md-3 form-inline">
-        <input class="form-control" style="width:80%" type="search" placeholder="bscar en mis anuncios">
-        <button class="btn btn-primary">Buscar</button>
+    <!----      <input class="form-control" style="width:80%" type="search" placeholder="bscar en mis anuncios">
+      <button class="btn btn-primary">Buscar</button> -->
       </div>
       </div>
-    <div class="row pt-5">
-      <div class="col-md-2 offset-md-1">
+     <!--Comienza tabla de publicaciones-->
+     <button class="btn btn-primary"; onclick="Pusuario()"; >Publiicaciones Realizadas</button>
+     <button class="btn btn-danger"; onclick="Request()"; >Solicitudes Hechas</button>
+     <div id="publicaciones"> 
+    <div class="row pt-5" >
+      <div class="col-md-2 offset-md-1" >
           <img src="img/User.png">
       </div>
       <div class="col-md-6">
@@ -89,9 +93,9 @@
           <h3>10$</h3>
       </div>
     </div>
-    <div class="row pt-5">
+    <div class="row pt-5" >
       <div class="col-md-2 offset-md-1">
-          <img src="img/User.png">
+          <img  src="img/User.png">
       </div>
       <div class="col-md-6">
           <h4>Anuncio Dos</h4>
@@ -114,16 +118,59 @@
       </div>
     </div>
   </div>
+</div>
     </section>
     </div>
 
 
 
+    <script>
+    var texto=new Array();
+    firebase.auth().onAuthStateChanged(function(user) {      
+        var uid= user.uid;
+        firebase.database().ref("Usuario/"+uid).child("Publication").once("value", function(snapshot) {
+            snapshot.forEach(function(categoria) {   
+                categoria.forEach(function(idpublicacion) {   
+                    cat=categoria.key;
+                    IDp=idpublicacion.key;
+                 
+                    texto="";
+                    var contenido=document.getElementById('publicaciones');
+                    var txt=new Array();
+                    var database = firebase.database().ref("Publications/"+cat+"/"+IDp);
+                    database.once("value", function(child) {
+                        //TAKE ALL THE RESULTS ACCORDING TO THE CATEGORIE
+                        var desc1= (JSON.stringify(child.child("description")).split('"').join('')); 
+                        var title1=(JSON.stringify(child.child("title")).split('"').join(''));
+                        var img1=(JSON.stringify(child.child("pic1")));
+                        var precio1=JSON.stringify(child.child("valor"));
+                        texto=creartexto(img1,title1,desc1,precio1)+texto; 
+                        contenido.innerHTML=texto;    
+                      });
 
-    <script src="app.js" type="text/javascript" language="JavaScript"></script>
-    <script>ver();</script>
-    <script src="app.js"></script>
-    <script src="app.js"></script>
+                       
+                });
+            });
+        });
+    });
+    function creartexto(img1,title1,desc1,precio1){
+    
+    var text= 
+    ' <div class="row pt-5" ><div class="col-md-2 offset-md-1">'+
+    '<img src='+img1+'></div>' +
+      '<div class="col-md-6">'+
+          '<h4>'+title1+'</h4>'+
+          '<p>'+desc1+'</p></div>'+
+      '<div class="col-md-2 offset-md-1">'+
+          '<h3>'+precio1+'</h3>'+
+      '</div> </div>';
+    
+    return text;
+    }
+    </script>
+      <p><a href="JavaScript:newPopup('index.html','a');">Open a popup window</a></p>
+     
+    <script src="java/profil.js"></script>
     <!-- Optional JavaScript -->
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

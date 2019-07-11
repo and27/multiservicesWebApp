@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Multiservices</title>
+        <link rel="stylesheet" href="CSS/main.css"
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBxGF4EGHE-6tmzA60DZktJLslX8n2ThFc",
+        authDomain: "fabulus-a7471.firebaseapp.com",
+        databaseURL: "https://fabulus-a7471.firebaseio.com",
+        projectId: "fabulus-a7471",
+        storageBucket: "fabulus-a7471.appspot.com",
+        messagingSenderId: "608667945769"
+      };
+
+      firebase.initializeApp(config);
+    </script>
+
+
+</head>
+<body >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <a class="navbar-brand" href="#">MS</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Servicios</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Acerca de</a>
+       </li>
+
+     </ul>
+     <form class="form-inline my-2 my-lg-0">
+       <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+       <button class="btn btn-primary" onclick='cerrar()'>Cerrar Cuenta</button>
+     </form>
+   </div>
+  </nav>
+
+<div class="container" >
+    <h1 class="back text-center pt-5" id="title2">Username</h1>
+
+    <section id="usuario" >
+    <div id="contenedor">
+
+      <div  class="row">
+        <div class="col-md-2 offset-md-2"><a href="main.html"><button  class="btn btn-outline-dark"> Perfil</button></a></div>
+        <div class="col-md-2"><a href="anuncios.html"><button class="btn btn-outline-dark">Anuncios</button></a></div>
+        <div class="col-md-2"><a href="mensajes.html"><button class="btn btn-dark">Mensajes</button></a></div>
+        <div class="col-md-2"><button class="btn btn-outline-dark">Notificaciones</button></div>
+      </div>
+      <hr>
+    
+	<!--Sección de mensajes -->
+	<div class="row pt-5">
+	<div class="col-md-4">
+		<div class="row ">
+		<div class="col-md-12 text-center">
+			<h4>Usuario1</h4>
+			<img class="message-image" src="img/s1.png">
+			<p> Lorem ipsum dolor sit amet</p>
+		</div>
+		</div>
+		<hr>
+		<div class="row">
+		<div class="col-md-12 text-center">
+			<h4>Usuario2</h4>
+			<img class="message-image" src="img/s2.png">
+			<p> Lorem ipsum dolor sit amet</p>
+		</div>
+		</div>
+		<hr>
+		<div class="row">
+		<div class="col-md-12 text-center">
+			<h4>Usuario3</h4>
+			<img class="message-image" src="img/s3.png">
+			<p> Lorem ipsum dolor sit amet</p>
+		</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+	<div class="row m-5 ">
+	<div class="col-md-8 message p-3">
+	<p>User1: Lorem ipsum dolor sit amet...</p>
+	<p>Date --> 12/12/12</p>
+	</div>
+	</div>
+	<div class="row m-5">
+	<div class="col-md-8 offset-md-4 message p-3">
+	<p>Me: Lorem ipsum dolor sit amet...</p>
+	<p>Date --> 12/12/12</p>
+	</div>
+	</div>
+	<div class="row m-5 ">
+	<div class="col-md-8 message p-3">
+	<p>User1: Lorem ipsum dolor sit amet...</p>
+	<p>Date --> 12/12/12</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!--Fin Sección de mensajes -->
+   
+     
+    </section>
+    </div>
+
+
+
+
+    <script src="app.js" type="text/javascript" language="JavaScript"></script>
+    <script>ver();</script>
+    <script src="app.js"></script>
+    <script src="app.js"></script>
+    <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ </body>
+</body>
+</html>
